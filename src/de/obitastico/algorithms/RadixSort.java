@@ -12,11 +12,14 @@ public class RadixSort {
         LinkedList<Integer> sorted_list = new LinkedList<>(toList(array));
         int digit_index = 0;
         int max = stream(array).max().getAsInt();
+
         while (pow(10, digit_index) <= max){
             LinkedList<Integer>[] partions = new LinkedList[10];
+
             for (int i = 0; i < partions.length;i++){
                 partions[i] = new LinkedList<>();
             }
+
             for (int value : sorted_list) {
                 int index = floorDiv(value, (int) pow(10, digit_index)) % 10;
                 partions[index].add(value);
