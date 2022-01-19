@@ -33,6 +33,12 @@ public class Utils {
         return list;
     }
 
+    public static void swap(int[] array, int index1, int index2) {
+        int temp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = temp;
+    }
+
     public static int max(int[] array) {
         int max_value = array[0];
         for (int value: array) {
